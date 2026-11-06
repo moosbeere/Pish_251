@@ -1,8 +1,8 @@
 // Lab2.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
-#include <Windows.h>
+#include <iostream> //нужно закоментировать при демонстрации работы макросов
+#include <Windows.h> //нужно закоментировать при демонстрации работы макросов
 
 //пространство имен
 using std::cout;
@@ -26,27 +26,67 @@ void test() {
     cout << x << std::endl;
 }
 
+
+//#define PI 3.14f //макрос
+//#define CIRCLE_AREA(r) r*r*PI
+//#define CIRCLE_AREA_2(r) (r)*(r)*PI
+#define RECTANGLE_AREA(a,b) a=a*b
+
+int zxc(int* nach, int* kon) {
+    int sum = 0;
+    for (int* a = nach; a < kon; a++) {
+        sum = sum + *a;
+        std::cout << *a << " ";
+    }
+    return sum;
+}
+
 int main()
 {
+    int aboba[] = { 42, 81, 67, 109, 9 };
+    int kolvo = sizeof(aboba) / sizeof(aboba[0]); //узнаем количество элементов в массиве 
+    std::cout << "сумма элементов массива:" << zxc(aboba, std::end(aboba)) << std::endl;
+    std::cout << *(std::end(aboba)-1);
+
+
+
+
+
+    //cout << PI;
+    //cout << endl;
+    //float a = 2;
+    //float b = 3;
+    //cout << CIRCLE_AREA(a + b);
+    //cout << endl;
+    //cout << CIRCLE_AREA_2(a + b);
+    //int a = 7;
+    ////int b = 2;
+    //RECTANGLE_AREA(a, 3);
+    //cout << a;
 
     
     //функции
 
-    test();
-    test();
-    test();
-    test();
-    function(4); //вызов
-    int arr[] = { 2,5,8,4 };
-    int s = sum(arr, std::size(arr));
-    cout << s;
-    cout << std::endl;
-    int x = 10;
-    mult2(x);
-    //cout << y; ошибка вызова локальной перменной
-    cout << x;
-    cout << std::endl;
-    cout << a;
+    //test();
+    //test();
+    //test();
+    //test();
+    //function(4); //вызов
+    //int arr[] = { 2,5,8,4 };
+    //int s = sum(arr, std::size(arr));
+    //cout << s;
+    //cout << std::endl;
+    //int x = 10;
+    //mult2(x);
+    ////cout << y; ошибка вызова локальной перменной
+    //cout << x;
+    //cout << std::endl;
+    //cout << a;
+    //cout << "enter" << endl;
+    //int a;
+    //cin >> a;
+    //cout << a;
+    //cin.get();
 }
 
 void function(std::string name) {
@@ -65,11 +105,11 @@ int sum(int arr[], int length)
     }
     return sum;
 }
-void mult2(int &x)
-{
-    int y = 10;
-    x = pow(x, 2);
-}
+//void mult2(int &x)
+//{
+//    int y = 10;
+//    x = pow(x, 2);
+//}
     //ссылки
     //int x = 10;
     //int& y = x;
