@@ -7,6 +7,15 @@ using std::cout;
 int main()
 {
     setlocale(LC_ALL, "RUS");
+    int y = 10;
+    int o = 15;
+    int& z = y;
+    int* i = &y;
+    i = &o;
+    i + 1;
+    cout << z; //10
+    cout i // 00006563
+
     //побитовые операции
     int a = 2; //010
     int b = 2; //010
